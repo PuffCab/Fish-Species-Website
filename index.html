@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="lightbox.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Inicio Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="/FishSpeciesWeb/img/logo_web_fish_NoBackground.png"
+                        alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="fishRegions.html">Fish Regions</a></li>
+                    <li><a href="#">Nutritional info</a></li>
+                    <li><a href="fishInfo.html">Fishes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN Navbar -->
+    <!-- incio Slider -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="https://www.fishwatch.gov/sites/default/files/Hake_White_NB_W_0.png"
+                    alt="Picture of mountains" id='img-slider'>
+                <div class="carousel-caption">
+                    <h1>Fishes in the Sea</h1>
+                    <br>
+                    <button type="button" class="btn btn-default">Know More</button>
+                </div>
+            </div>
+            <!--End Item Active-->
+            <div class="item">
+                <img src="/FishSpeciesWeb/img/barcopesca.jpg" alt="fishing picture" id='img-slider'>
+            </div>
+            <div class="item">
+                <img src="/FishSpeciesWeb/img/barco2.jpg" alt="fishing picture" id='img-slider'>
+            </div>
+        </div>
+        <!--Comienzo Slider Control-->
+        <a href="#myCarousel" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a href="#myCarousel" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--Fin Slider control-->
+    </div>
+    <!-- fin slider -->
+    <!-- 3 columns section inicio -->
+    <!-- <div class="container text-center">
+        <h2>Esto va en el medio?</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/img/atun.jpg" id="icon" alt="">
+                <h4>atun</h4>
+            </div>
+            <div class="col-sm-4">
+                <img src="/img/06_11.jpg" id="icon" alt="">
+                <h4>balao</h4>
+            </div>
+            <div class="col-sm-4">
+                <img src="/img/06_12.jpg" id="icon" alt="">
+                <h4>Fileton</h4>
+            </div>
+        </div>
+    </div> -->
+    <!-- FIN 3 columns section -->
+    <!-- INICIO 2 columns section -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Contemos algunas cosas de los peces</h4>
+                <p>Estas son algunos datos que es importante conocer. Estas son algunos datos que es importante conocer.
+                    Estas son algunos datos que es importante conocer.Estas son algunos datos que es importante
+                    conocer.Estas son algunos datos que es importante conocer.Estas son algunos datos que es importante
+                    conocer.</p>
+                <p>Ademas de lo anterior, es importante conocer tambien estas otras cosas. Ademas de lo anterior, es
+                    importante conocer tambien estas otras cosas. Ademas de lo anterior, es importante conocer tambien
+                    estas otras cosas. Ademas de lo anterior, es importante conocer tambien estas otras cosas.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/manta_panel.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div> -->
+    <!-- FIN 2 columns section -->
+    <!-- INICIO 4 columns section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>Columna 1</h4>
+                <p> cosas de la columna 1. cosas de la columna 1. cosas de la columna 1. cosas de la columna 1. cosas de
+                    la columna 1. cosas de la columna 1. cosas de la columna 1. cosas de la columna 1.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <img src="/FishSpeciesWeb/img/ostrasbolsas.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>Columna 2</h4>
+                <p> otras cosas de la columna 2. otras cosas de la columna 2otras cosas de la columna 2.otras cosas de
+                    la columna 2.otras cosas de la columna 2.otras cosas de la columna 2.otras cosas de la columna
+                    2.otras cosas de la columna 2</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <img src="/FishSpeciesWeb/img/atlantic-herring_04.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- FIN 4 columns section -->
+    <!-- INICIO Show and Hide Section -->
+    <!-- <div class="container">
+        <div class="row">
+            <h4><a href="#hidden" data-toggle="collapse">Esta es la seccion que se encoje</a></h4>
+            <div id="hidden" class="collapse">
+                <h4>Contemos algunas cosas de los peces</h4>
+                <p>Estas son algunos datos que es importante conocer. Estas son algunos datos que es importante conocer.
+                    Estas son algunos datos que es importante conocer.Estas son algunos datos que es importante
+                    conocer.Estas son algunos datos que es importante conocer.Estas son algunos datos que es importante
+                    conocer.</p>
+                <p>Ademas de lo anterior, es importante conocer tambien estas otras cosas. Ademas de lo anterior, es
+                    importante conocer tambien estas otras cosas. Ademas de lo anterior, es importante conocer tambien
+                    estas otras cosas. Ademas de lo anterior, es importante conocer tambien estas otras cosas.</p>
+            </div>
+        </div>
+    </div> -->
+    <!-- FIN Show and Hide Section -->
+    <!-----------------TEXT CONTENT---------------->
+    <div class="panel-group text-center" id="accordion-home">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-home" href="#collapseOne">Why
+                        SeaFish</a></h3>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col col-md-8 cyan">
+
+                            <p>Estas son algunos datos que es importante conocer. Estas son algunos
+                                datos que es
+                                importante conocer.
+                                Estas son algunos datos que es importante conocer.Estas son algunos datos que es
+                                importante
+                                conocer.Estas son algunos datos que es importante conocer.Estas son algunos datos que es
+                                importante
+                                conocer.</p>
+
+                        </div>
+                    </div>
+                    <!--end row -->
+                </div>
+                <!--- panel-body -->
+            </div> <!-- end panel-collapse -->
+        </div> <!-- end panel-default -->
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-home"
+                        href="#collapseTwo">Nutritional importance of fish</a></h3>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse ">
+                <div class="panel-body">
+                    <div class="row cyan ">
+
+                        <p>Ademas de lo anterior, es importante conocer tambien estas otras cosas. Ademas de lo
+                            anterior, es
+                            importante conocer tambien estas otras cosas. Ademas de lo anterior, es importante conocer
+                            tambien
+                            estas otras cosas. Ademas de lo anterior, es importante conocer tambien estas otras cosas.
+                        </p>
+
+                    </div> <!-- end row -->
+                </div> <!-- end panel-body -->
+            </div> <!-- end collapseTwo -->
+        </div> <!-- end panel-default -->
+
+    </div>
+    <!--- end #accordion-home --->
+    <!-- INICIO SFooter -->
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <!-- incio 3 colums footer -->
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <br>
+                <h4>Adress and info goes here</h4>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4">
+                <img src="/FishSpeciesWeb/img/pez.png" class="icon" alt="">
+            </div>
+            <!-- FInal 3 columns Footer -->
+        </div>
+    </footer>
+
+
+
+    <!-- <script src="response.js"></script> -->
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+/* inicio Style Navbar */
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #034694;
+  color: #fff;
+  padding: 1% 0;
+  font-size: 1.2em;
+  border: 0;
+}
+
+.navbar-brand {
+  float: left;
+  min-height: 55px;
+  padding: 0px 15px 5px;
+}
+
+.navbar-inverse .navbar-nav .active a,
+.navbar-inverse .navbar-nav .active a:focus,
+.navbar-inverse .navbar-nav .active a:hover {
+  color: #fff;
+  background-color: #034694;
+}
+
+.navbar-inverse .navbar-nav li a {
+  color: #d5d5d5;
+}
+
+/* Fin Style Navbar */
+
+/* inicio Style Carousel */
+
+.carousel-caption {
+  /* para centrar el texto en la foto */
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+}
+
+.btn {
+  font-size: 18px;
+  color: #fff;
+  padding: 12px 22px;
+  background-color: #034694;
+  border: 2px solid #fff;
+}
+
+/* style del container con las 3 columns */
+.container {
+  margin: 4% auto; /* esto lo separa del ImageSlider y anhade space beneath icons */
+}
+/* style de los Icons */
+#icon {
+  max-width: 200px;
+  margin: 1% auto; /* auto left-right para centrar el icon */
+}
+
+/* FISHCARDS style */
+h5 {
+  font-weight: bold;
+}
+.btn.btn-secondary {
+  border-radius: 14px !important;
+}
+/* FIN FISHCARDS style */
+
+/* Footer Style */
+
+footer {
+  width: 100%;
+  background-color: #034694;
+  padding: 5%;
+  color: #fff;
+}
+/* RRSS icons Style */
+
+.fa {
+  padding: 15px;
+  font-size: 25px;
+  color: #fff;
+}
+.fa:hover {
+  color: #d5d5d5;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  /*no mostramos el texto en mobil.Ocupa mucho */
+  .carousel-caption {
+    display: none;
+  }
+  #icon {
+    max-width: 150px;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 900px) {
+  .fa {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* Solucion para redimensionar todas las img de las FishCards*/
+img.card-img-top {
+  float: left; /* no se muy bien que hace esta */
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+#img-slider {
+  width: 100%;
+  height: 500px;
+  /* object-fit: scale-down; */
+}
+/* cosas para borrar despues */
+
+#tarjeta {
+  width: 200px;
+  height: 300px;
+}
+
+.boxContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+/* LIGHT BOX style */
+#lightbox {
+  background-color: #eee;
+  padding: 10px;
+  border-bottom: 2px solid #666;
+  border-right: 2px solid #666;
+}
+#lightboxDetails {
+  font-size: 0.8em;
+  padding-top: 0.4em;
+}
+#lightboxCaption {
+  float: left;
+}
+#keyboardMsg {
+  float: right;
+}
+
+#lightbox img {
+  border: none;
+}
+#overlay img {
+  border: none;
+}
+
+#overlay {
+  background-image: url(overlay.png);
+}
+
+* html #overlay {
+  background-color: #000;
+  back\ground-color: transparent;
+  background-image: url(blank.gif);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+}
+
+/*FIN light box style */

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Inicio Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="/FishSpeciesWeb/img/logo_web_fish_NoBackground.png"
+                        alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="fishRegions.html">Fish Regions</a></li>
+                    <li><a href="#">Nutritional info</a></li>
+                    <li><a href="#">Fishes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN Navbar -->
+    <h4>Aqui van las FishCards y las search bars (calories and name)</h4>
+    <div id="fishCards" class="container-fluid boxContainer grid">
+
+    </div>
+    <!-- INicio ejemplo -->
+    <!-- <section class="container-fluid boxContainer grid">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1>Know about the Fish</h1>
+                    <h6 style="color: red;">Healthy food</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 text-center" id='tarjeta'>
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Bacala</h6>
+                    <p>200 Kcal</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Salmon</h6>
+                    <p>150 Kcal</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>San Pedro</h6>
+                    <p>90 Kcal</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Sardina</h6>
+                    <p>120 Kcal</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Sardina</h6>
+                    <p>120 Kcal</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card bg-light border-0 mb-2">
+                        <div class="card-body">
+                            <img src="/img/atlantic-herring_04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Sardina</h6>
+                    <p>120 Kcal</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Click For More</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Fin ejemplo -->
+    <!-- inicio ejemplo bootstrap -->
+    <div class="container-fluid boxContainer grid" id='cardContainer'>
+        <!-- <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/img/atlantic-herring_04.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/img/atlantic-herring_04.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/img/atlantic-herring_04.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the
+                    bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/img/atlantic-herring_04.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make
+                    up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div> -->
+
+
+    </div>
+    <!-- inicio ejemplo bootstrap -->
+    <!-- Inicio Modal BOx -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 id="modalTitle">Title</h1>
+                            </div>
+                            <div class="modal-body">
+                                <p id="data-one">Calorias</p>
+                                <p id="data-two">Cholesterol</p>
+                                <p id="data-three">Fat</p>
+                                <p id="data-four">Protein</p>
+                                <p id="data-five">Selenium</p>
+                                <p id="data-six">Sodium</p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="text" class="btn btn-primary" data-dismiss="modal" value="Close">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- FIn Modal BOx -->
+
+    <!-- INICIO Modal SLIDER -->
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalSlider">Open
+            Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModalSlider" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!-- <h4 class="modal-title">FISH NAME</h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox" id="sliderImg">
+                                <!-- <div class="item active" id="slider-active">
+                                    <!-- <img src="http://lorempixel.com/400/575/technics/3" alt="..."> -->
+                                <div class="carousel-caption">
+                                    ...
+                                </div>
+                            </div>
+                            <div class="item" id="slider-next">
+                                <!-- <img src="http://lorempixel.com/400/575/technics/3" alt="..."> -->
+                                <div class="carousel-caption">
+                                    ...
+                                </div>
+                            </div>
+                            ... -->
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                            data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- FIN Modal SLIDER -->
+
+    <!-- INICIO SFooter -->
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <!-- incio 3 colums footer -->
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <br>
+                <h4>Adress and info goes here</h4>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4">
+                <img src="/FishSpeciesWeb/img/pez.png" class="icon" alt="">
+            </div>
+            <!-- FInal 3 columns Footer -->
+        </div>
+
+    </footer>
+
+
+
+    <!-- <script src="response.js"></script> -->
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Fish Regions</title>
+</head>
+
+<body>
+    <!-- Inicio Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="/FishSpeciesWeb/img/logo_web_fish_NoBackground.png"
+                        alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#">Fish Regions</a></li>
+                    <li><a href="#">Nutritional info</a></li>
+                    <li><a href="fishInfo.html">Fishes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN Navbar -->
+    <h4>FISH REGIONS</h4>
+    <br>
+    <h4>AQUI VAN LAS TABLAS</h4>
+    <!-- INICIO Tablas -->
+    <!-- inicio checkboxes y dropdown -->
+
+    <div class="container-fluid">
+        <div class="col-sm-4">
+            <form class=form>
+                <p>Filter by Fisheries Region</p>
+                <label><input type="checkbox" name="region" value="GA" id="GA">Greater Atlantic</label>
+                <label><input type="checkbox" name="region" value="SE" id="SE">Southeast</label>
+                <label><input type="checkbox" name="region" value="WC" id="WC">West Coast</label>
+                <label><input type="checkbox" name="region" value="A" id="A">Alaska</label>
+                <label><input type="checkbox" name="region" value="PI" id="PI">Pacific Islands</label>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <p>Filter by Harvest Type:</p>
+            <select name="harvest" class="alltypes" id="harvestType">
+                <option value="all">All Types</option>
+
+            </select>
+        </div>
+        <!-- fin checkboxes y dropdown -->
+        <!-- inicio tabla -->
+
+
+        <table style="width: 100%" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Scientific Name</th>
+                    <th>Location</th>
+                    <th>Fisheries Region</th>
+                    <th>Harvest Type</th>
+                </tr>
+            </thead>
+            <tbody id="fish-data">
+                <!-- a partir de aqui creamos tabla en JS -->
+
+
+                <!-- fin tabla creada en JS -->
+            </tbody>
+        </table>
+    </div>
+    <!-- fin tabla -->
+    <!-- FIN Tablas -->
+    <!-- INICIO SFooter -->
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <!-- incio 3 colums footer -->
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <br>
+                <h4>Adress and info goes here</h4>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4">
+                <img src="/FishSpeciesWeb/img/pez.png" class="icon" alt="">
+            </div>
+            <!-- FInal 3 columns Footer -->
+
+            <!-- <script src="response.js"></script> -->
+            <script src="main.js"></script>
+
+</body>
+
+</html>
