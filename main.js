@@ -232,10 +232,10 @@ function createCards(data) {
         aInfoButtonLeft.onclick = function () {
             // console.log(data[i]['Image Gallery'][i]['src'])
                 if (data[i]["Image Gallery"] != null) {
-      for (let x = 0; x < data[i]["Image Gallery"].length; x++) {   
-          console.log(data[i]['Image Gallery'][x]["src"])
-      }
-  }
+                for (let x = 0; x < data[i]["Image Gallery"].length; x++) {   
+                    console.log(data[i]['Image Gallery'][x]["src"])
+                }
+            }
 
             // let divSliderActive = document.getElementById('sliderImg')
             // let imgSliderActive = document.createElement('img');
@@ -251,5 +251,11 @@ function createCards(data) {
  
 
 
-// MODAL BOX
+// SEARCH BAR
 
+// const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('keyup', () => {
+    const inputValue = searchInput.value;
+    console.log(inputValue);
+})
