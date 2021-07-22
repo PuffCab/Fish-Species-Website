@@ -56,12 +56,22 @@
   margin: 1% auto; /* auto left-right para centrar el icon */
 }
 
+/* SEARCH BAR style */
+#searchBar {
+  padding-bottom: 0%;
+}
+
+/* FIN SEARCH BAR style */
+
 /* FISHCARDS style */
 h5 {
   font-weight: bold;
 }
 .btn.btn-secondary {
   border-radius: 14px !important;
+}
+#cardContainer {
+  padding-top: 9px;
 }
 /* FIN FISHCARDS style */
 

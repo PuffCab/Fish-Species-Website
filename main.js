@@ -99,6 +99,7 @@ function createTable(data) {
         row.appendChild(tdHarvest);
     }
     console.log("createTable() run")
+    
 }
 
 // End of Fisheries Regions Table
@@ -137,6 +138,8 @@ function harvestTypes(data) {
 
         selectType.appendChild(option)
     }
+
+    
     console.log("harvestType() run")
 }
 
@@ -251,11 +254,39 @@ function createCards(data) {
  
 
 
-// SEARCH BAR
+// INICIO SEARCH BAR
 
-// const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
-searchInput.addEventListener('keyup', () => {
-    const inputValue = searchInput.value;
+
+searchInput.addEventListener('input', () => {
+    // let filter = searchInput.value.toUpperCase();
+    let allNames = document.querySelectorAll('p.card-text');
+    const inputValue = searchInput.value.toUpperCase();
     console.log(inputValue);
+    console.log(allNames);
+    let fishCards = document.getElementsByClassName('card')
+    for (let i = 0; i < allNames.length; i++) {
+        
+        let fishName = allNames[i].textContent
+        // console.log(fishCards)
+        // console.log(fishName)
+        if (fishName.toUpperCase().indexOf(inputValue) > -1) {
+            fishCards[i].style.display = 'block';
+        } else {
+            fishCards[i].style.display = 'none';
+        }
+
+    }
 })
+
+// FIN SEARCH BAR
+
+
+// DROPDOWN 
+
+const harvestType = document.getElementById('harvestType');
+
+    harvestType.addEventListener('select', () => {
+        console.log('hola')
+        
+    }) 
