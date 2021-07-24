@@ -13,6 +13,7 @@ function getData() {
     }).then(data => {
         console.log(data);
         loadFunctions (data)
+        setEventListeners(data)
         
     } )
 }
@@ -57,10 +58,13 @@ console.log(currentLocation)
 function loadFunctions (data) {
 
         if (currentLocation == '/FishSpeciesWeb/fishRegions.html') {
-            createTable(data)
-            harvestTypes(data)
+            createTable(data);
+            harvestTypes(data);
+            setEventListeners(data);
+            
             } else if (currentLocation == '/FishSpeciesWeb/fishInfo.html') {
             createCards(data)
+            
             // createModal(data)
             
          }
@@ -135,12 +139,13 @@ function harvestTypes(data) {
 
         var option = document.createElement('option') //creo el valor "option" del dropdown, para cada uno de los Style repetidos
         option.innerHTML = repetedStyle[d];
-
+        option.value = repetedStyle[d];
         selectType.appendChild(option)
     }
 
     
     console.log("harvestType() run")
+    
 }
 
 // END dropdown harvest type 
@@ -263,7 +268,7 @@ searchInput.addEventListener('input', () => {
     let allNames = document.querySelectorAll('p.card-text');
     const inputValue = searchInput.value.toUpperCase();
     console.log(inputValue);
-    console.log(allNames);
+    // console.log(allNames);
     let fishCards = document.getElementsByClassName('card')
     for (let i = 0; i < allNames.length; i++) {
         
@@ -280,13 +285,27 @@ searchInput.addEventListener('input', () => {
 })
 
 // FIN SEARCH BAR
-
+ 
 
 // DROPDOWN 
+ 
+function setEventListeners(data) { // ANCHOR PREGUNTA...si hago const = setEventListeners = (data)=> da error de cannt accs before initalization ...porque intnta accdr la const bfore defined...why?? 
+    document.getElementById('harvestType').addEventListener('change', (event) => { 
+        const harvestTypeValue = document.querySelector("#harvestType").value
+    console.log(harvestTypeValue)
+        console.log("event :", event)
+            
+    });
+    // dropdownFilter(data)
+}  
 
-const harvestType = document.getElementById('harvestType');
 
-    harvestType.addEventListener('select', () => {
-        console.log('hola')
-        
-    }) 
+// Filter by dropdown 
+
+// function dropdownFilter(data) {
+//     const harvestTypeValue = document.querySelector("#harvestType").value
+//     console.log(harvestTypeValue)
+// } //lo he copiado dentro de Seteventlisteners, porque solo captaba el primer value = all, la primera vez, no al cambiar
+
+
+
