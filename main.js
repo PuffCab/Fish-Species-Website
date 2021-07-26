@@ -13,7 +13,7 @@ function getData() {
     }).then(data => {
         console.log(data);
         loadFunctions (data)
-        setEventListeners(data)
+        // setEventListeners(data)
         
     } )
 }
@@ -21,49 +21,20 @@ getData()
 
 
 
-
-// BORRAR esta parte abajo es para rendr data en la pagina seeAPIinfohtml
-const body = document.querySelector('body');
-const ul = document.createElement('ul');
-body.appendChild(ul);
- 
-
-// const li = document.createElement('li');
-// ul.appendChild(li)
-
-
-// for (i = 0; i < data.length; i++) {
-
-//     let li = data[i]['Species Name']
-
-//      li = document.createElement('li');
-//     ul.appendChild(li)
-//     li.innerHTML = data[i]['NOAA Fisheries Region']
-
-//     // if (data[i]["Species Name"] == true) {
-//     //     count ++
-//     // }
-
-//     // // console.log(indexOf.data[i]["Species Name"])
-//     // console.log(count)
-//     console.log(li[1])
-// }
-
-// FIN above part // BORRAR
-
 // Locate window path and execute CreateTable funcion if we are in the right one
 const currentLocation = window.location.pathname
 console.log(currentLocation)
 
 function loadFunctions (data) {
 
-        if (currentLocation == '/FishSpeciesWeb/fishRegions.html') {
+        if (currentLocation == '/fishRegions.html') {
             createTable(data);
-            harvestTypes(data);
+            dropdown(data);
             setEventListeners(data);
             
-            } else if (currentLocation == '/FishSpeciesWeb/fishInfo.html') {
+            } else if (currentLocation == '/fishInfo.html') {
             createCards(data)
+            searchBarFunction(data)
             
             // createModal(data)
             
@@ -78,6 +49,7 @@ function loadFunctions (data) {
 // Create Table Fisheries Regions // 
 function createTable(data) {
     const tBody = document.getElementById('fish-data');
+    tBody.innerHTML = ''
     
     for (i = 0; i < data.length; i++) {
         let row = document.createElement('tr');
@@ -102,7 +74,7 @@ function createTable(data) {
         row.appendChild(tdFishRegion);
         row.appendChild(tdHarvest);
     }
-    console.log("createTable() run")
+    // console.log("createTable() run")
     
 }
 
@@ -110,7 +82,7 @@ function createTable(data) {
 
 // DROPDOWN HARVEST TYPE FUNCTION 
 
-function harvestTypes(data) {
+function dropdown(data) {
     let selectType = document.getElementById('harvestType') //selecciono el Id del dropdown
     // console.log(selectType)
     
@@ -144,7 +116,7 @@ function harvestTypes(data) {
     }
 
     
-    console.log("harvestType() run")
+    // console.log("harvestType() run")
     
 }
 
@@ -260,52 +232,127 @@ function createCards(data) {
 
 
 // INICIO SEARCH BAR
+function searchBarFunction(data) {
+    const searchInput = document.getElementById('search-input');
 
-const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', () => {
+        // let filter = searchInput.value.toUpperCase();
+        let allNames = document.querySelectorAll('p.card-text');
+        const inputValue = searchInput.value.toUpperCase();
+        console.log(inputValue);
+        // console.log(allNames);
+        let fishCards = document.getElementsByClassName('card')
+        for (let i = 0; i < allNames.length; i++) {
+            
+            let fishName = allNames[i].textContent
+            // console.log(fishCards)
+            // console.log(fishName)
+            if (fishName.toUpperCase().indexOf(inputValue) > -1) {
+                fishCards[i].style.display = 'block';
+            } else {
+                fishCards[i].style.display = 'none';
+            }
 
-searchInput.addEventListener('input', () => {
-    // let filter = searchInput.value.toUpperCase();
-    let allNames = document.querySelectorAll('p.card-text');
-    const inputValue = searchInput.value.toUpperCase();
-    console.log(inputValue);
-    // console.log(allNames);
-    let fishCards = document.getElementsByClassName('card')
-    for (let i = 0; i < allNames.length; i++) {
-        
-        let fishName = allNames[i].textContent
-        // console.log(fishCards)
-        // console.log(fishName)
-        if (fishName.toUpperCase().indexOf(inputValue) > -1) {
-            fishCards[i].style.display = 'block';
-        } else {
-            fishCards[i].style.display = 'none';
         }
-
-    }
-})
-
+    })
+}
 // FIN SEARCH BAR
  
 
 // DROPDOWN 
  
 function setEventListeners(data) { // ANCHOR PREGUNTA...si hago const = setEventListeners = (data)=> da error de cannt accs before initalization ...porque intnta accdr la const bfore defined...why?? 
-    document.getElementById('harvestType').addEventListener('change', (event) => { 
-        const harvestTypeValue = document.querySelector("#harvestType").value
-    console.log(harvestTypeValue)
-        console.log("event :", event)
+    
+    let harvestTypeValue = document.getElementById('harvestType').addEventListener('change', (event) => {
+        checkbox(data)
             
     });
-    // dropdownFilter(data)
+    // console.log(harvestTypeValue)
+
+
+    let checkBoxes = document.querySelectorAll('input[type=checkbox][name=region]');
+    
+    Array.from(checkBoxes).forEach(function (oneCheckBox) {
+        oneCheckBox.addEventListener('change', function () {
+            checkbox(data);
+        })
+    })
+
+
+    //CHECKBOXES
+    // let checkBoxes = document.querySelectorAll('input[type=checkbox][name=region]');
+    // let optionChecked = [];
+
+    // checkBoxes.forEach(function (oneCheckBox) {
+    //     oneCheckBox.addEventListener('change', function () {
+    //         optionChecked =
+    //             Array.from(checkBoxes) //convert to array to filter and map
+    //             .filter(i => i.checked) // use array.filter to remove unchecked ones
+    //             .map(i => i.value)     // use array.map to extract checked values
+    //         console.log(optionChecked)
+    //         filtering(data, harvestTypeValue, optionChecked)
+    //     })
+    // })  ///este bloque esta comentado por todas las modificaciones para separar por un lado el localizar el event listener, y por otro lo que ocurre al marcar las checkboxes 
+    
 }  
 
+function checkbox(data) {
+    let harvestTypeValue = document.querySelector("#harvestType").value;
 
-// Filter by dropdown 
+    let checkBoxes = document.querySelectorAll('input[type=checkbox][name=region]');
+    let optionChecked = [];
 
-// function dropdownFilter(data) {
-//     const harvestTypeValue = document.querySelector("#harvestType").value
-//     console.log(harvestTypeValue)
-// } //lo he copiado dentro de Seteventlisteners, porque solo captaba el primer value = all, la primera vez, no al cambiar
+    checkBoxes.forEach(function (oneCheckBox) {
+        
+            optionChecked =
+                Array.from(checkBoxes) //convert to array to filter and map
+                .filter(i => i.checked) // use array.filter to remove unchecked ones
+                .map(i => i.value)     // use array.map to extract checked values
+            // console.log(optionChecked)
+            
+        
+    })
+    filtering(data, optionChecked, harvestTypeValue)
+}
 
+// FILTERING - filter by option checked and dropdown selected 
 
+function filtering(data,optionChecked, harvestTypeValue) {
+    // console.log(data);
+    // console.log('dropdown',harvestTypeValue)
+    // console.log('checkbox', optionChecked)
+    
+    let filteredResults = [];
+    if (optionChecked.length === 0 && harvestTypeValue === 'all') {
+        filteredResults = data
+        // console.log('if 1->')
+    }
+    else if (optionChecked.length === 0 && harvestTypeValue != 'all') {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i]['Harvest Type'] == harvestTypeValue) {
+                filteredResults.push(data[i]);
+                // console.log('if 2->')
+            }
+        }
+    }
+    else if (optionChecked.length != 0 && harvestTypeValue === 'all') {
+        for (let i = 0; i < data.length; i++) {
+            if (optionChecked.includes(data[i]['NOAA Fisheries Region'])) {
+                filteredResults.push(data[i]);
+                // console.log('if 3->')
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < data.length; i++) {
+            if (optionChecked.includes(data[i]['NOAA Fisheries Region']) && data[i]['Harvest Type'] == harvestTypeValue) {
+                filteredResults.push(data[i]);
+                // console.log('if 4->')
+            }
+        }
+    }
+    
 
+    // console.log(filteredResults)
+    createTable(filteredResults)
+}
