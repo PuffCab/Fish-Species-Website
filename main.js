@@ -237,17 +237,19 @@ function searchBarFunction(data) {
 
     searchInput.addEventListener('input', () => {
         // let filter = searchInput.value.toUpperCase();
-        let allNames = document.querySelectorAll('p.card-text');
+        let commonNames = document.querySelectorAll('p.card-text');
+        let scientificNames = document.querySelectorAll('h5');
         const inputValue = searchInput.value.toUpperCase();
         console.log(inputValue);
         // console.log(allNames);
         let fishCards = document.getElementsByClassName('card')
-        for (let i = 0; i < allNames.length; i++) {
+        for (let i = 0; i < commonNames.length; i++) {
             
-            let fishName = allNames[i].textContent
+            let fishComName = commonNames[i].textContent
+            let fishSciName = scientificNames[i].textContent
             // console.log(fishCards)
             // console.log(fishName)
-            if (fishName.toUpperCase().indexOf(inputValue) > -1) {
+            if (fishComName.toUpperCase().indexOf(inputValue) > -1 || fishSciName.toUpperCase().indexOf(inputValue) > -1) {
                 fishCards[i].style.display = 'block';
             } else {
                 fishCards[i].style.display = 'none';
@@ -277,22 +279,6 @@ function setEventListeners(data) { // ANCHOR PREGUNTA...si hago const = setEvent
             checkbox(data);
         })
     })
-
-
-    //CHECKBOXES
-    // let checkBoxes = document.querySelectorAll('input[type=checkbox][name=region]');
-    // let optionChecked = [];
-
-    // checkBoxes.forEach(function (oneCheckBox) {
-    //     oneCheckBox.addEventListener('change', function () {
-    //         optionChecked =
-    //             Array.from(checkBoxes) //convert to array to filter and map
-    //             .filter(i => i.checked) // use array.filter to remove unchecked ones
-    //             .map(i => i.value)     // use array.map to extract checked values
-    //         console.log(optionChecked)
-    //         filtering(data, harvestTypeValue, optionChecked)
-    //     })
-    // })  ///este bloque esta comentado por todas las modificaciones para separar por un lado el localizar el event listener, y por otro lo que ocurre al marcar las checkboxes 
     
 }  
 
@@ -337,18 +323,34 @@ function filtering(data,optionChecked, harvestTypeValue) {
     }
     else if (optionChecked.length != 0 && harvestTypeValue === 'all') {
         for (let i = 0; i < data.length; i++) {
-            if (optionChecked.includes(data[i]['NOAA Fisheries Region'])) {
-                filteredResults.push(data[i]);
-                // console.log('if 3->')
+            shouldAdd = true;
+            optionChecked.forEach((option) => {
+                if (!data[i]['NOAA Fisheries Region'].includes(option)) {
+                shouldAdd = false;
+            }
+            })
+            if (shouldAdd) {
+                filteredResults.push(data[i])
             }
         }
     }
     else {
         for (let i = 0; i < data.length; i++) {
-            if (optionChecked.includes(data[i]['NOAA Fisheries Region']) && data[i]['Harvest Type'] == harvestTypeValue) {
-                filteredResults.push(data[i]);
-                // console.log('if 4->')
+
+            shouldAdd = true; // logica sacada de consultga en Stackov. revisar bien
+            optionChecked.forEach((option) => {
+                    if (!data[i]['NOAA Fisheries Region'].includes(option)) {
+                        shouldAdd = false;
+                }
+                })
+            if (shouldAdd && data[i]['Harvest Type'] == harvestTypeValue) {
+                filteredResults.push(data[i])
             }
+
+            // if (optionChecked.includes(data[i]['NOAA Fisheries Region']) && data[i]['Harvest Type'] == harvestTypeValue) {
+            //     filteredResults.push(data[i]);
+            //     // console.log('if 4->')
+            // }
         }
     }
     
@@ -356,3 +358,5 @@ function filtering(data,optionChecked, harvestTypeValue) {
     // console.log(filteredResults)
     createTable(filteredResults)
 }
+
+
