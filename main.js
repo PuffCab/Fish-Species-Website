@@ -38,12 +38,18 @@ const currentLocation = window.location.pathname;
 console.log(currentLocation);
 
 function loadFunctions(data) {
-  if (currentLocation == "/fishregions") {
+  if (
+    currentLocation == "/fishregions.html" ||
+    currentLocation == "/fishregions"
+  ) {
     // .html deleted from path for Netlify, and removed camel case
     createTable(data);
     dropdown(data);
     setEventListeners(data);
-  } else if (currentLocation == "/fishinfo") {
+  } else if (
+    currentLocation == "/fishinfo.html" ||
+    currentLocation == "/fishinfo"
+  ) {
     createCards(data);
     searchBarFunction(data);
 
