@@ -38,11 +38,12 @@ const currentLocation = window.location.pathname;
 console.log(currentLocation);
 
 function loadFunctions(data) {
-  if (currentLocation == "/fishRegions.html") {
+  if (currentLocation == "/fishRegions") {
+    // .html deleted from path for Netlify
     createTable(data);
     dropdown(data);
     setEventListeners(data);
-  } else if (currentLocation == "/fishInfo.html") {
+  } else if (currentLocation == "/fishInfo") {
     createCards(data);
     searchBarFunction(data);
 
