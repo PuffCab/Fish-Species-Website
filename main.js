@@ -4,22 +4,35 @@
 //     redirect: 'follow',
 
 // };
-const url =
-  "https://cab-cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species";
-function getData() {
-  fetch(url)
-    .then((response) => {
-      //   console.log(response);
-      return response.json();
-    })
-    .then((data) => {
-      //   console.log(data);
-      loadFunctions(data);
-      // setEventListeners(data)
-    });
-}
-getData();
+// const url =
+//   "https://cab-cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species";
+// function getData() {
+//   fetch(url)
+//     .then((response) => {
+//       //   console.log(response);
+//       return response.json();
+//     })
+//     .then((data) => {
+//       //   console.log(data);
+//       loadFunctions(data);
+//       // setEventListeners(data)
+//     });
+// }
+// getData();
 
+//turn fetch in async/await
+
+const getDataAsync = async () => {
+  const response = await fetch(
+    "https://cab-cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species"
+  );
+  console.log("response : >>", response);
+  console.log("now");
+  const data = await response.json();
+  console.log(`data>>`, data);
+  loadFunctions(data);
+};
+getDataAsync();
 // Locate window path and execute CreateTable funcion if we are in the right one
 const currentLocation = window.location.pathname;
 console.log(currentLocation);
@@ -340,7 +353,7 @@ function filtering(data, optionChecked, harvestTypeValue) {
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      shouldAdd = true; // ANCHOR ligica SO. Revisar
+      shouldAdd = true; // ANCHOR logica SO. Revisar
       optionChecked.forEach((option) => {
         if (!data[i]["NOAA Fisheries Region"].includes(option)) {
           shouldAdd = false;
